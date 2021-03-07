@@ -24,14 +24,19 @@ gapminder %>% filter(lifeExp < 30)
 ```
 Life expectancy in **Rwanda** in 1992 was particularly low because of the *genocide* which occurred in that nation with inter-tribal warfare (refer ...).  
 
-**Afghanistan** was in 1952 a monarchy and according to Wikipedia (in commenting on a purported election of the national assembly) noted that "*no census* of population has ever been undertaken" <https://en.wikipedia.org/wiki/1952_in_Afghanistan>
+**Afghanistan** was in 1952 a monarchy and according to Wikipedia (in commenting on a purported election of the national assembly) noted that "*no census* of population has ever been undertaken" <https://en.wikipedia.org/wiki/1952_in_Afghanistan>, so it is not clear how a reliable estimate of life expectancy was made!
 
-## Including Plots
+## Countries with life expectancy greater than 81
 
-You can also embed plots, for example:
+```{r LE>81}
+gapminder %>% filter(lifeExp > 81) %>% arrange(-lifeExp)
+```
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Life expectancy by continents in 2007
+
+
+```{r lifexpCpnt, echo=FALSE}
+boxplot(lifeExp~continent, year=2007, data=gapminder)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
