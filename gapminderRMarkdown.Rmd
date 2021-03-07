@@ -1,0 +1,37 @@
+---
+title: "Gapminder"
+author: "David Minty"
+date: "07/03/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("gapminder")
+library("tidyverse")
+```
+
+## Introduction
+
+In this document, we will be exploring the Gapminder dataset.
+
+## Observations of Gapminder
+
+### Countries with life expectancy less than 30
+
+```{r LE<30}
+gapminder %>% filter(lifeExp < 30)
+```
+Life expectancy in **Rwanda** in 1992 was particularly low because of the *genocide* which occurred in that nation with inter-tribal warfare (refer ...).  
+
+**Afghanistan** was in 1952 a monarchy and according to Wikipedia (in commenting on a purported election of the national assembly) noted that "*no census* of population has ever been undertaken" <https://en.wikipedia.org/wiki/1952_in_Afghanistan>
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
